@@ -4,6 +4,7 @@ server/node_modules
 client/build
 server/dist
 .env
+configure.env
 .env.local
 .DS_Store
 .vscode

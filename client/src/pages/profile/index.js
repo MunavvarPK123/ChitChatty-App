@@ -78,7 +78,7 @@ function Profile(){
                 </div>
                 <div className="select_prof_pic_container">
                     <input type="file" onChange={ onFileSelect } />
-                    <button className="uploade_img_btn" onClick={updateProfPic}>
+                    <button className="upload_img_btn"  style={{cursor: "pointer"}} onClick={updateProfPic}>
                         Upload
                     </button>
                 </div>
