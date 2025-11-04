@@ -1,0 +1,633 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Use Inter as the main font */
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  overflow-y: hidden;
+  background-color: #f0f2f5;
+}
+
+.container-back-img {
+  background-image: url('./../public/images/signup\ page.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.container-back-color {
+  background-color: #094de0e1;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.sign_up_page {
+  background-color: #000000;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgb(255, 255, 255);
+  width: 420px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sign_up_page_title h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+}
+
+.form input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgb(0, 98, 255);
+}
+
+.form .columns {
+  display: flex;
+  gap: 10px;
+}
+
+.form .columns input {
+  width: calc(50% - 5px);
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #0842e2; 
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #19b4f1;
+}
+
+/* Bottom Links */
+.sign_up_page_check {
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.sign_up_page_check a {
+  color: #0842e2;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.sign_up_page_check a:hover {
+  color: #19b4f1;
+}
+
+
+/********************************************************************
+***************************CSS FOR LOADIER**************************
+********************************************************************/
+.loader_overlay{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(8, 66, 226, 0.5); /* soft blue overlay matching button */
+  z-index: 2;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+ 
+.loader_spinner,
+.loader_spinner:after {
+  box-sizing: border-box;
+}
+
+.loader_spinner {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loader_spinner:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #000000; /* spinner color matching hover link */
+  border-color: #000000 transparent #ffffff transparent;
+  animation: loader-spinner 1.2s infinite;
+}
+
+@keyframes loader-spinner {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+/*******************************************************
+********CSS FOR HOME PAGE*******************************
+********************************************************/
+
+.home_page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #5602dda8 30%, #001ea3 70%);
+
+
+  font-family: "Inter", sans-serif;
+}
+
+.main_content{
+  display: flex;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px 10px;
+  flex:1;
+}
+
+/*******************************************************
+********CSS FOR HEADER COMPONENT************************
+********************************************************/
+.app_header{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px 30px;
+  justify-content: space-between;
+  border-bottom: #000000 1px solid;
+}
+
+.app_logo{
+  display: flex;
+  flex-wrap: nowrap;
+  color: #000000;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+i{
+  margin: 5px 10px;
+}
+
+.app_user_profile{
+  display: flex;
+}
+
+.logged_user_name{
+  color: #000000;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-right: 20px;
+  margin-left: 15px;
+}
+
+.logged_user_profile_pic{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+/*******************************************************
+*******Sidebar CSS ************************
+********************************************************/
+.side_bar{
+  width: 30%;
+  padding: 0px 20px;
+}
+
+/*******************************************************
+********CSS FOR SEARCH COMPONENT************************
+********************************************************/
+.user_search_button{
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.user_search_text{
+  width: 100%;
+  height: 40px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #000;
+  border: #ddd 1px solid;
+}
+
+.search_icon{
+  position: absolute;
+  right: 15px;
+  top: 40%;
+  transform: translateY(-50%);
+  font-size: 20px;    
+  color: #ffffff;           
+  cursor: pointer;       
+  transition: 0.3s;      
+}
+
+.search_icon:hover {
+  color: #000f97;      
+    transform: translateY(-50%) scale(1.2); 
+}
+
+/*******************************************************
+********CSS FOR USER LIST COMPONENT*********************
+*******************************************************/
+
+.filtered_users {
+  border-bottom: #ffffff 1px solid;
+  padding: 10px;
+  color: #ffffff;
+  background-color: rgb(0, 0, 0);
+}
+
+.selected_user {
+  border-bottom: #ccc 1px solid;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  background-color: #2517df;
+}
+
+
+.filtered_user_display {
+  display: flex;
+  align-items: center;
+  gap: 20px;         
+  flex-wrap: nowrap;    
+  padding: 10px 0;      
+}
+
+.filtered_user_details {
+  flex: 1;              
+  min-width: 0;        
+}
+
+.user_display_name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  word-break: break-word; 
+}
+
+.user_display_email {
+  font-size: 12px;
+  color: #fffdfd;
+  word-break: break-word; 
+}
+
+.user_profile_image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user_default_profile, .user_selected_profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;           
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.user_default_profile{
+  background-color: #ffffff;   
+  color: #000000;   
+}
+
+.user_selected_profile{
+  background-color: #000000;   
+  color: #ffeeee;   
+}
+
+.user_start_chat {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.start_chat_btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5602dda8;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start_chat_btn:hover {
+  background-color: #001ea3;
+}
+
+/*******************************************************
+*************CSS STYLES FOR CHAT AREA**************
+********************************************************/
+
+.app_chat_area{
+  background-color: rgb(0, 0, 0);
+  width: 70%;
+  padding: 20px 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+}
+
+/*******************************************************
+*************CSS STYLES FOR CHAT AREA HEADER************
+********************************************************/
+.app_chat_area_header{
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    border-bottom: #f5f5f5 1px solid;
+    text-align: right;
+    font-weight: bold;
+    color: #5602dda8;
+}
+
+/*******************************************************
+********CSS STYLES FOR CHAT AREA & CHAT INPUT***********
+********************************************************/
+.chat_area{
+  flex: 1;
+  overflow-y: scroll;
+  padding: 10px 20px;
+}
+
+.send_msg_div{
+  position: relative;
+  margin-top: 20px;
+}
+
+.send_msg_input{
+  width: 100%;
+  height: 40px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #000000;
+  border: #000000 1px solid;
+}
+
+.send-message-btn{
+  position: absolute;
+  right: 10px;
+  font-size: 25px;
+  color: #5602dda8;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin-top: 10px;
+}
+
+.send-emoji-btn{
+  position: absolute;
+  right: 50px;
+  font-size: 25px;
+  color: #5602dda8;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin-top: 10px;
+}
+
+.send-img-btn{
+  position: absolute;
+  right: 80px;
+  font-size: 25px;
+  color: #5602dda8;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin-top: 10px;
+}
+
+/*****************************************************
+***********CUSTOM SCROLLBAR FOR CHATAREA**************
+******************************************************/
+.chat_area::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.chat_area::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px grey; 
+  border-radius: 10px;
+}
+
+/* Handle */
+.chat_area::-webkit-scrollbar-thumb {
+  background: #5602dda8; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.chat_area::-webkit-scrollbar-thumb:hover {
+  background: blue; 
+}
+
+/*******************************************************
+***************CSS FOR CHAT MESSAGES********************
+********************************************************/
+.msg_container{
+    display: flex;
+}
+.send_msg, .rcv_msg{
+    padding: 10px 20px;
+    margin-top: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    width: fit-content;
+}
+
+.send_msg{ 
+    background-color: #5602dda8;
+    color: rgb(0, 0, 0);
+    margin-left: 100px;
+    border-top-right-radius: 0px;
+}
+
+.rcv_msg{ 
+    background-color: #ffffff;
+    color: #000000;
+    margin-right: 100px;
+    border-bottom-left-radius: 0px;
+}
+.msg_timestamp{
+  width: fit-content;
+  color: white;
+  font-size: 13px;
+}
+.last_msg_timestamp{
+  font-size: 13px;
+}
+
+.unread_msg_count{
+  text-align: center;
+  float: right;
+  font-size: 13px;
+  padding-top: 3px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #000f97;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+
+.typing_indicator{
+  font-size: 13px;
+  color: #000f97;
+}
+
+/*****************************************************
+*************CSS STYLES FOR PROFILE PAGE**************
+******************************************************/
+
+.prof_page_container{
+  display: flex;
+  width: 80%;
+  color: #28282B;
+  margin: 100px auto;
+  padding: 20px 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.prof_pic_container{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+.prof_info_container{
+  width: 70%;
+  padding: 30px 10px;
+}
+.user_prof_pic_upload, .user_default_prof_pic{
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  color: #28282B;
+  border: #ddd 5px solid;
+  font-size: 120px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 240px;
+}
+
+.user_prof_name{
+  padding: 10px 0px;
+  border-bottom: #cdcdcd 1.5px solid;
+  margin-bottom: 30px;
+}
+.select_prof_pic_container{
+  padding: 30px 0px;
+}
+
+.logout-btn{
+  background-color: transparent;
+  color: #000000a8;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/*******************************************************
+***************MEDIA QUERY********************
+********************************************************/
+
+@media only screen and (max-width : 1000px) {
+  .filtered_user_details, .last_msg_timestamp{
+    display: none;
+  }
+
+  .user_search_button, .unread_msg_count{
+    display: none;
+  }
+  
+  .side_bar{
+    width: 15%;
+  }
+
+  .app_chat_area{
+    width: 85%;
+  }
+  
+}
