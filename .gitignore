@@ -1,0 +1,10 @@
+node_modules
+client/node_modules
+server/node_modules
+client/build
+server/dist
+.env
+.env.local
+.DS_Store
+.vscode
+Thumbs.db
