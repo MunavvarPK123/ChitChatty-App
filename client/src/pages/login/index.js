@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { loginUser } from "../../apiCalls/auth";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
@@ -12,21 +12,23 @@ function Login(){
             password: ''
     });
 
-    const navigate = useNavigate();
-
     async function onFormSubmit(event){
         event.preventDefault();
-        dispatch(showLoader());
-        const response = await loginUser(user);
-        dispatch(hideLoader());
-        
-        if(response.success){
-            toast.success(response.message);
-            localStorage.removeItem("token");
-            localStorage.setItem('token', response.token);
-            navigate("/");
-            window.location.reload();
-        }else{
+        let response = null;
+        try{
+            dispatch(showLoader());
+            response = await loginUser(user);
+            dispatch(hideLoader());
+            if(response.success){
+                toast.success(response.message);
+                localStorage.removeItem("token");
+                localStorage.setItem('token', response.token);
+                window.location.href = "/";
+            }else{
+                toast.error(response.message);
+            }
+        }catch(error){
+            dispatch(hideLoader());
             toast.error(response.message);
         }
     }
