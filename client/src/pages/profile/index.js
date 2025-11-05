@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, useRef } from "react-redux";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { uploadProf } from "../../apiCalls/user";
@@ -10,12 +10,13 @@ function Profile(){
     const { user } = useSelector(state => state.userReducer);
     const [ image, setImage ] = useState('');
     const dispatch = useDispatch()
+    const fileInputRef = useRef(null);
 
     useEffect(() => {
         if(user?.profilePic){
             setImage(user.profilePic)
         }
-    })
+    },[user])
 
     function getInitials(){
         let f = user?.firstname.toUpperCase()[0];
@@ -37,6 +38,9 @@ function Profile(){
             setImage(reader.result)
         }
 
+        if (fileInputRef.current) {
+            fileInputRef.current.value = '';
+        }
     }
     
     const updateProfPic = async () => {
@@ -77,7 +81,7 @@ function Profile(){
                     <b>Account Created : </b> { moment( user?.createdAt).format('MMM-DD-YYYY') }
                 </div>
                 <div className="select_prof_pic_container">
-                    <input type="file" onChange={ onFileSelect } />
+                    <input type="file" style={{cursor : "pointer"}} onChange={ onFileSelect } ref={fileInputRef} />
                     <button className="upload_img_btn"  style={{cursor: "pointer"}} onClick={updateProfPic}>
                         Upload
                     </button>
