@@ -1,24 +1,33 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const http = require('http');
 const authRouter = require('./controllers/authentController');
 const userRouter = require('./controllers/userController')
 const chatRouter = require('./controllers/chatController')
 const messageRouter = require('./controllers/messageController') 
 
-app.use(cors());
 app.use(express.json( {limit: "50mb" }));
-const server = require('http').createServer(app);
 
-const io = require('socket.io')(server, {cors: {
-    origin: ['http://localhost:3000', 'https://chitchatty-app-client.onrender.com'],
-    methods : ['GET', 'POST'],
-    credentials : true
-}})
+const corsOptions = {
+    origin: 'https://chitchatty-app-client.onrender.com', // deployed frontend URL
+    methods: ['GET', 'POST'],
+    credentials: true
+};
+app.use(cors(corsOptions));
+
 app.use('/api/auth', authRouter );
 app.use('/api/user', userRouter)
 app.use('/api/chat', chatRouter)
 app.use('/api/message', messageRouter)
+
+// Create server
+const server = http.createServer(app);
+
+// Socket.io setup
+const io = require('socket.io')(server, {
+    cors: corsOptions
+});
 
 const onlineUser = []
 
