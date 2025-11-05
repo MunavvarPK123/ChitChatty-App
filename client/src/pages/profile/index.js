@@ -1,6 +1,6 @@
-import { useDispatch, useSelector, useRef } from "react-redux";
+import { useEffect, useState, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import { useEffect, useState } from "react";
 import { uploadProf } from "../../apiCalls/user";
 import { hideLoader, showLoader } from "../../redux/loaderSlice";
 import toast from "react-hot-toast";
