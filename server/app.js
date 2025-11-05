@@ -11,8 +11,9 @@ app.use(express.json( {limit: "50mb" }));
 const server = require('http').createServer(app);
 
 const io = require('socket.io')(server, {cors: {
-    origin : 'http://localhost:3000',
-    methods : ['GET', 'POST']
+    origin: ['http://localhost:3000', 'https://chitchatty-app-client.onrender.com'],
+    methods : ['GET', 'POST'],
+    credentials : true
 }})
 app.use('/api/auth', authRouter );
 app.use('/api/user', userRouter)
@@ -45,7 +46,7 @@ io.on('connection', socket => {
         if(!onlineUser.includes(userId)){
             onlineUser.push(userId)
         }
-        socket.emit('all_online_users', onlineUser);
+        io.emit('all_online_users', onlineUser);
     })
 
     socket.on('user-logout', userId => {
