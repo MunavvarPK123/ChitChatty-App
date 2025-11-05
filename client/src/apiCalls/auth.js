@@ -1,8 +1,8 @@
-import {axiosInstance, url} from './index'
+import {axiosInstance} from './index'
 
 export const signUpUser = async (user) => {
     try{
-        const response = await axiosInstance.post(url + '/api/auth/signup', user);
+        const response = await axiosInstance.post('/api/auth/signup', user);
         return response.data;
     }catch(error){
         if (error.response) {
@@ -27,7 +27,7 @@ export const signUpUser = async (user) => {
 
 export const loginUser = async (user) => {
     try{
-        const response = await axiosInstance.post(url + '/api/auth/login', user);
+        const response = await axiosInstance.post('/api/auth/login', user);
         return response.data;
     }catch(error){
         if (error.response) {
