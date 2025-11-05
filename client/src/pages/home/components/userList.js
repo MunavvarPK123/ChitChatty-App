@@ -90,7 +90,7 @@ function UsersList({searchKey, socket, onlineUser}){
             return allChats
         else{
             return allUsers.filter(user => {
-                user.firstname?.toLowerCase().includes(searchKey?.toLowerCase()) || 
+                return user.firstname?.toLowerCase().includes(searchKey?.toLowerCase()) || 
                 user.lastname?.toLowerCase().includes(searchKey?.toLowerCase())
             });
         }
