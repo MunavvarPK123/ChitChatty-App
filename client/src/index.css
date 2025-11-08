@@ -672,6 +672,11 @@ i{
     cursor: pointer;
   }
 
+  .typing_indicator{
+    font-size: 13px;
+    color: #ffffff;
+  }
+
   .app_header {
     width: 100%;
     padding: 12px 18px;

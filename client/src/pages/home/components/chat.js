@@ -174,8 +174,7 @@ function ChatArea({ socket }){
                                 const chat = document.querySelector(".app_chat_area");
                                 const sidebar = document.querySelector(".side_bar");
                                 if (chat && sidebar) {
-                                    chat.classList.remove("active");
-                                    chat.style.display = "none";        
+                                    chat.classList.remove("active");        
                                     sidebar.style.display = "block";    
                                 }
                             }}><i className="fa-solid fa-arrow-left"></i>
