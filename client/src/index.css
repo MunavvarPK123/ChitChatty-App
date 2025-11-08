@@ -636,4 +636,46 @@ i{
     align-items: center;
     padding: 10px 15px;
   }
+
+  .logged_user_name {
+    font-size: 16px;
+    padding: 0;
+    margin-right: auto;
+  }
+
+  .logged_user_profile_pic {
+    width: 40px;
+    height: 40px;
+  }
+
+  .app_user_profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .user_default_profile,
+  .user_selected_profile,
+  .user_profile_image {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .user_display_name {
+    font-size: 14px;
+  }
+
+  .user_display_email {
+    font-size: 11px;
+  }
+
+  .send_msg {
+    margin-left: 40px;
+  }
+
+  .rcv_msg {
+    margin-right: 40px;
+  }
+
 }
