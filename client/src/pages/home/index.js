@@ -23,6 +23,19 @@ function Home(){
         }
     }, [user, onlineUser])
 
+    // Mobile UI behavior
+    useEffect(() => {
+        if (selectedChat && window.innerWidth <= 1000) {
+            const chat = document.querySelector(".app_chat_area");
+            const sidebar = document.querySelector(".side_bar");
+
+            if (chat && sidebar) {
+                chat.classList.add("active");
+                sidebar.style.display = "none";
+            }
+        }
+    }, [selectedChat]);
+
     return (
         <div className="home_page">
             <Header socket={socket}></Header>

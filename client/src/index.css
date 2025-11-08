@@ -607,6 +607,10 @@ i{
   cursor: pointer;
 }
 
+.back_btn {
+  display: none;
+}
+
 /*******************************************************
 ***************MEDIA QUERY********************
 ********************************************************/
@@ -616,6 +620,7 @@ i{
   .home_page {
     min-height: 100vh;
     background: linear-gradient(135deg, #5602dda8 30%, #001ea3 70%);
+    overflow: hidden;
   }
 
   .user_search_button{
@@ -630,6 +635,7 @@ i{
   .side_bar{
     width: 100%;
     padding: 10px;
+    display:  block;
     order: 1;
   }
 
@@ -638,15 +644,46 @@ i{
     height: 85vh;
     margin-top: 10px;
     order: 2;
+    display: none;
     border-radius: 10px;
     height: calc(100vh - 200px);
+    order: 2;
+  }
+
+  .app_chat_area.active {
+    display: flex;
+  }
+
+  .app_chat_area_header {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #fff;
+    position: sticky;
+  }
+
+  .back_btn {
+    display: inline-block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    margin-right: 10px;
+    color: #fff;
+    cursor: pointer;
   }
 
   .app_header {
+    width: 100%;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #001ea3 30%, #5602dda8 70%);
+    border-bottom: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
+    flex-wrap: nowrap; 
+    position: sticky;
+    top: 0;
+    z-index: 20;
   }
 
   .logged_user_name {

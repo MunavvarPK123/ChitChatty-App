@@ -170,6 +170,17 @@ function ChatArea({ socket }){
             {
                 selectedChat && <div className="app_chat_area">
                     <div className="app_chat_area_header">
+                            <button className="back_btn" onClick={() => {
+                                const chat = document.querySelector(".app_chat_area");
+                                const sidebar = document.querySelector(".side_bar");
+                                if (chat && sidebar) {
+                                    chat.classList.remove("active");
+                                    chat.style.display = "none";        
+                                    sidebar.style.display = "block";    
+                                }
+                            }}><i className="fa-solid fa-arrow-left"></i>
+                            </button>
+
                             { formatName(selectedUser) }
                     </div>
                     <div className="chat_area" id="chat_area"> 
