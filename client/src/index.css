@@ -614,20 +614,26 @@ i{
 ********************************************************/
 
 @media only screen and (max-width : 1000px) {
-  .filtered_user_details, .last_msg_timestamp{
-    display: none;
-  }
-
+  
   .user_search_button, .unread_msg_count{
-    display: none;
+    display: block;
   }
   
   .side_bar{
-    width: 15%;
+    width: 100%;
+    padding: 10px;
   }
 
   .app_chat_area{
-    width: 85%;
+    width: 100%;
+    height: 85vh;
+    margin-top: 10px;
   }
-  
+
+  .app_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
 }

@@ -29,9 +29,9 @@ function Header({socket}){
                 ChitChatty
             </div>
             <div className="app_user_profile">
+                <div className="logged_user_name">{getFullname()}</div>
                 { user?.profilePic && <img src={user?.profilePic} alt="profile-pic" className="logged_user_profile_pic" onClick={ () => navigate('/profile')}></img>}
                 { !user?.profilePic && <div className="logged_user_profile_pic" onClick={ () => navigate('/profile')}>{getInitials()}</div>}
-                <div className="logged_user_name">{getFullname()}</div>
                 <button className="logout-btn" onClick={ logout }>
                     <i className="fa-solid fa-power-off"></i>
                 </button>
